@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import com.OrangeHRMAutomation.pageobjects.addEmployeePage;
 import com.OrangeHRMAutomation.pageobjects.loginPage;
 
-public class TC_addEmployee_002 extends BaseClass{
+public class TC_addEmployee_003 extends BaseClass{
 	
 	
 	@Test

@@ -29,7 +29,11 @@ public class loginPage {
 	
 	@FindBy(xpath= "//a[contains(text(),'Logout')]")
 	@CacheLookup
-	WebElement logOut;
+	public WebElement logOut;
+	
+	@FindBy(xpath="//body/div[@id='wrapper']/div[@id='branding']/a[1]/img[1]")
+	@CacheLookup
+	public static WebElement logo;
 	
 	
 	public void setUsername(String name)
