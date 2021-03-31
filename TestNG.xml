@@ -12,8 +12,9 @@
   <parameter name="browser" value="chrome"></parameter>
     
     <classes>
+    <class name="com.OrangeHRMAutomation.testcases.TC_EditEmployeedetails_004"/>
       <!--class name="com.ActiTimeAutomation.testcases.TC_LoginTest_001"-->
-      <class name="com.OrangeHRMAutomation.testcases.TC_LogoDisplayed_002"/>
+      <!--class name="com.OrangeHRMAutomation.testcases.TC_LogoDisplayed_002"-->
       
     </classes>
   </test> <!-- Test -->

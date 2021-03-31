@@ -76,6 +76,7 @@ public class TC_addEmployee_003 extends BaseClass{
 		
 	}
 	
+	/*
 	public static void loginOrange(String uname, String pass) throws InterruptedException
 	{
 		loginPage lp = new loginPage(driver);
@@ -84,5 +85,6 @@ public class TC_addEmployee_003 extends BaseClass{
 		lp.clickLoginButton();
 		Thread.sleep(3000);
 	}
+	*/
 
 }

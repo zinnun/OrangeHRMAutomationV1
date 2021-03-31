@@ -7,13 +7,13 @@
   <test thread-count="5" name="OrangeHRMTest(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.OrangeHRMAutomation.testcases.TC_LogoDisplayed_002">
+      <class name="com.OrangeHRMAutomation.testcases.TC_EditEmployeedetails_004">
         <methods>
           <include name="openBrowser"/>
-          <include name="logoCheck"/>
+          <include name="editInfo"/>
           <include name="closeBrowser"/>
         </methods>
-      </class> <!-- com.OrangeHRMAutomation.testcases.TC_LogoDisplayed_002 -->
+      </class> <!-- com.OrangeHRMAutomation.testcases.TC_EditEmployeedetails_004 -->
     </classes>
   </test> <!-- OrangeHRMTest(failed) -->
 </suite> <!-- Failed suite [OrangeHRMAutomationV1] -->
