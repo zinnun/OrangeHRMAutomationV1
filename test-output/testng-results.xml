@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="OrangeHRMAutomationV1" duration-ms="105838" started-at="2021-03-16T16:07:58Z" finished-at="2021-03-16T16:09:44Z">
+  <suite name="OrangeHRMAutomationV1" duration-ms="38464" started-at="2022-01-16T05:48:47Z" finished-at="2022-01-16T05:49:25Z">
     <groups>
     </groups>
-    <test name="OrangeHRMTest" duration-ms="105838" started-at="2021-03-16T16:07:58Z" finished-at="2021-03-16T16:09:44Z">
-      <class name="com.OrangeHRMAutomation.testcases.TC_EditEmployeedetails_004">
-        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.OrangeHRMAutomation.testcases.TC_EditEmployeedetails_004@14bf9759]" name="openBrowser" is-config="true" duration-ms="63183" started-at="2021-03-16T16:07:58Z" finished-at="2021-03-16T16:09:01Z">
+    <test name="OrangeHRMTest" duration-ms="38464" started-at="2022-01-16T05:48:47Z" finished-at="2022-01-16T05:49:25Z">
+      <class name="com.OrangeHRMAutomation.testcases.TC_ChangeProfilePicture_005">
+        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.OrangeHRMAutomation.testcases.TC_ChangeProfilePicture_005@3abbfa04]" name="openBrowser" is-config="true" duration-ms="9040" started-at="2022-01-16T05:48:47Z" finished-at="2022-01-16T05:48:56Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="editInfo()[pri:0, instance:com.OrangeHRMAutomation.testcases.TC_EditEmployeedetails_004@14bf9759]" name="editInfo" duration-ms="42470" started-at="2021-03-16T16:09:01Z" finished-at="2021-03-16T16:09:43Z">
+        <test-method status="PASS" signature="changeProfilePicture()[pri:0, instance:com.OrangeHRMAutomation.testcases.TC_ChangeProfilePicture_005@3abbfa04]" name="changeProfilePicture" duration-ms="29185" started-at="2022-01-16T05:48:56Z" finished-at="2022-01-16T05:49:25Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- editInfo -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.OrangeHRMAutomation.testcases.TC_EditEmployeedetails_004@14bf9759]" name="closeBrowser" is-config="true" duration-ms="0" started-at="2021-03-16T16:09:44Z" finished-at="2021-03-16T16:09:44Z">
+        </test-method> <!-- changeProfilePicture -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.OrangeHRMAutomation.testcases.TC_ChangeProfilePicture_005@3abbfa04]" name="closeBrowser" is-config="true" duration-ms="0" started-at="2022-01-16T05:49:25Z" finished-at="2022-01-16T05:49:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.OrangeHRMAutomation.testcases.TC_EditEmployeedetails_004 -->
+      </class> <!-- com.OrangeHRMAutomation.testcases.TC_ChangeProfilePicture_005 -->
     </test> <!-- OrangeHRMTest -->
   </suite> <!-- OrangeHRMAutomationV1 -->
 </testng-results>

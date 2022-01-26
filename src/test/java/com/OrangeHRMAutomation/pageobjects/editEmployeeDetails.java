@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 public class editEmployeeDetails {
 
 
-	WebDriver driver;
+	public WebDriver driver;
 	
 	public editEmployeeDetails(WebDriver driver)
 	{
@@ -28,13 +28,19 @@ public class editEmployeeDetails {
 	@CacheLookup
 	WebElement searchName;
 	
+	
+	@FindBy(xpath= "//div[@class='ac_results']")
+	@CacheLookup
+	WebElement search_name_suggestion;
+	
+	
 	@FindBy(xpath= "//input[@id='searchBtn']")
 	@CacheLookup
 	WebElement searchButton;
 	
-	@FindBy(xpath= "//a[contains(text(),'Peter Mac')]")
+	@FindBy(xpath= "//div[@id='tableWrapper']/table/tbody/tr/td[3]/a")
 	@CacheLookup
-	WebElement expEmployee;
+	WebElement search_result;
 	
 	@FindBy(xpath= "//input[@id='btnSave'][@value='Edit']")
 	@CacheLookup
@@ -88,33 +94,39 @@ public class editEmployeeDetails {
 	@CacheLookup
 	public WebElement nationality;
 	
-	@FindBy(xpath = "//body/div[@id='wrapper']/div[@id='content']/div[@id='employee-details']/div[@id='pdMainContainer']/div[2]/form[1]/fieldset[1]/ol[3]/li[4]/img[1]")
+	@FindBy(xpath = "//body/div[@id='wrapper']/div[@id='content']"
+			+ "/div[@id='employee-details']/div[@id='pdMainContainer']"
+			+ "/div[2]/form[1]/fieldset[1]/ol[3]/li[4]/img[1]")
 	@CacheLookup
-	WebElement DOB;
+	public WebElement DOB;
 	
-	@FindBy(xpath = "//body/div[@id='wrapper']/div[@id='content']/div[@id='employee-details']/div[@id='pdMainContainer']/div[2]/form[1]/fieldset[1]/ol[3]/li[4]/img[1]")
+	@FindBy(xpath = "//body/div[@id='wrapper']/div[@id='content']"
+			+ "/div[@id='employee-details']/div[@id='pdMainContainer']"
+			+ "/div[2]/form[1]/fieldset[1]/ol[3]/li[4]/img[1]")
 	@CacheLookup
-	WebElement DOB_Year;
+	public WebElement DOB_Year;
 	
-	@FindBy(xpath = "//body/div[@id='wrapper']/div[@id='content']/div[@id='employee-details']/div[@id='pdMainContainer']/div[2]/form[1]/fieldset[1]/ol[3]/li[4]/img[1]")
+	@FindBy(xpath = "//body/div[@id='wrapper']/div[@id='content']"
+			+ "/div[@id='employee-details']/div[@id='pdMainContainer']"
+			+ "/div[2]/form[1]/fieldset[1]/ol[3]/li[4]/img[1]")
 	@CacheLookup
-	WebElement DOB_Month;
+	public WebElement DOB_Month;
 	
 	@FindBy(xpath = "//img[@id='empPic']")
 	@CacheLookup
-	WebElement ProfilePicture;
+	public WebElement ProfilePicture;
 	
 	@FindBy(xpath = "//input[@id='btnSave']")
 	@CacheLookup
 	public WebElement saveButton;
 	
-	@FindBy(xpath = "//script[contains(text(),'div.fadable')]")
+	@FindBy(xpath = "//div[contains(@class, 'message success fadable') and contains(., 'Successfully Saved')]")
 	@CacheLookup
-	public WebElement confirmation;
+	public static WebElement confirmationText;
 	
-	@FindBy(xpath = "//*[contains(text(),'Successfully Saved')]")
+	@FindBy(xpath = "//h1[contains(text(),'Personal Details')]")
 	@CacheLookup
-	public WebElement confirmationText;
+	public static WebElement personalInfo;
 	
 	//div[contains(text(), ' Successfully Saved')]
 	
@@ -138,7 +150,14 @@ public class editEmployeeDetails {
 	public void enterEmployeeName(String name)
 	{
 		searchName.click();
+		searchName.clear();
 		searchName.sendKeys(name);
+	}
+	
+	
+	public void seach_suggestion_click()
+	{
+		search_name_suggestion.click();
 	}
 	
 //	public void enterEmployeeName(String name)
@@ -151,9 +170,9 @@ public class editEmployeeDetails {
 		searchButton.click();
 	}
 	
-	public void clickExpEmployee()
+	public void click_search_result()
 	{
-		expEmployee.click();
+		search_result.click();
 	}
 
 	public void clickEdit()

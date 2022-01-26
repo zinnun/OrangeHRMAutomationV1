@@ -26,14 +26,15 @@ public class TC_LogoDisplayed_002 extends BaseClass{
 	@Test
 	public void logoCheck() throws InterruptedException, IOException
 	{
-	loginPage lp = new loginPage(driver);
-	lp.setUsername(userName);
-	lp.setPassword(passKey);
-	lp.clickLoginButton();
-	Thread.sleep(3000);
+	WebDriverWait wait = new WebDriverWait(driver, 1);
+	TC_LoginTest_001 tc1 = new TC_LoginTest_001();
+	tc1.login(userName, passKey);
+	
+	wait.until(ExpectedConditions.visibilityOf(loginPage.logo));
 	log.info("logged in");
 	
-	WebDriverWait wait = new WebDriverWait(driver, 1);
+
+	//WebDriverWait wait = new WebDriverWait(driver, 1);
 	wait.until(ExpectedConditions.visibilityOf(loginPage.logo));
 	
 	//boolean logOutButton = lp.logOut.isDisplayed();
@@ -57,7 +58,7 @@ public class TC_LogoDisplayed_002 extends BaseClass{
 	if( diff.hasDiff()==false)
 	{
 		Assert.assertTrue(true);
-		log.info("Test Passed");
+		log.info("Test Passed!!");
 	}
 	else 
 	{

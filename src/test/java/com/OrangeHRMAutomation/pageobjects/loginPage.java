@@ -36,6 +36,11 @@ public class loginPage {
 	public static WebElement logo;
 	
 	
+	@FindBy(xpath="//b[contains(text(),'Dashboard')]")
+	@CacheLookup
+	public static WebElement DashBoard;
+	
+	
 	public void setUsername(String name)
 	{
 		txtUsername.sendKeys(name);

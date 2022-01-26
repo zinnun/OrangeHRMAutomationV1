@@ -10,7 +10,8 @@ public class addEmployeePage {
 
 	public WebDriver driver;
 	
-	public addEmployeePage(WebDriver driver){
+	public addEmployeePage(WebDriver driver)
+	{
 		PageFactory.initElements(driver, this);
 	}
 	

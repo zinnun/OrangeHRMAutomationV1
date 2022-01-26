@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import com.OrangeHRMAutomation.pageobjects.loginPage;
 
 public class TC_LoginTest_001 extends BaseClass{
-
+	
 	@Test
 	public void loginOrange() throws InterruptedException
 	{
@@ -21,7 +21,7 @@ public class TC_LoginTest_001 extends BaseClass{
 		WebElement element= driver.findElement(By.xpath("//b[contains(text(),'Dashboard')]"));
 		
 		
-		if(element.isDisplayed()) 
+		if(element.isDisplayed()== true) 
 		{
 			log.info("element is displayed");
 			Assert.assertTrue(true);

@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.ActiTimeAutomation.testcases.TC_addEmployee_002">
+      <class name="com.OrangeHRMAutomation.testcases.TC_addEmployee_003">
         <methods>
           <include name="openBrowser"/>
           <include name="addNewCustomer"/>
           <include name="closeBrowser"/>
         </methods>
-      </class> <!-- com.ActiTimeAutomation.testcases.TC_addEmployee_002 -->
+      </class> <!-- com.OrangeHRMAutomation.testcases.TC_addEmployee_003 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

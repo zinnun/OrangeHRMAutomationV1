@@ -1,5 +1,8 @@
 package com.OrangeHRMAutomation.testcases;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.OrangeHRMAutomation.pageobjects.editEmployeeDetails;
@@ -10,10 +13,6 @@ public class TC_EditEmployeedetails_004 extends BaseClass{
 	@Test
 	public void editInfo() throws InterruptedException {
 		
-//	TC_LoginTest_001 loginPage = new TC_LoginTest_001();	
-//	loginPage.login();
-	
-		//TC_LoginTest_001.login(userName, passKey);
 		TC_LoginTest_001 t1 = new TC_LoginTest_001();
 		t1.login(userName, passKey);
 		
@@ -21,9 +20,19 @@ public class TC_EditEmployeedetails_004 extends BaseClass{
 		emp.clickPIM();
 		emp.clickEmployeeList();
 		Thread.sleep(2000);
-		emp.clickExpEmployee();
+		emp.enterEmployeeName("peter mac");
+		Thread.sleep(2000);
+		emp.seach_suggestion_click();
+		Thread.sleep(2000);
+		emp.clickSeach();
 		Thread.sleep(3000);
+		emp.click_search_result();
+		log.info("search result clicked");
+		//Thread.sleep(3000);
 		
+		
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+		wait.until(ExpectedConditions.visibilityOf(editEmployeeDetails.personalInfo));
 		emp.clickEdit();
 		emp.enterFirstName("Peter");
 		emp.enterMiddleName("Mac");
@@ -42,45 +51,26 @@ public class TC_EditEmployeedetails_004 extends BaseClass{
 		
 		emp.saveButton.click();
 		
-		//Thread.sleep(1000);
+
 		
-//		Actions act = new Actions(driver);
-//		act.moveToElement(emp.confirmation).perform();
+
 		
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOf(editEmployeeDetails.confirmationText)); 
+		String fadable_message=editEmployeeDetails.confirmationText.getText();
 		
-//		boolean conf = emp.confirmationText.isDisplayed();
-//		System.out.println(conf);
-		
-		/*
-		if (conf.equals("Successfully Saved ")) {
+
+		if(fadable_message.contains("Successfully Saved"))
+		{
 			Assert.assertTrue(true);
-			log.info("test passed");
-		}else {
-			Assert.assertTrue(false);
-			log.info("test failed");
-		}
-		/*
-		emp.clickSeach();
-		
-		Thread.sleep(3000);
-		
-		emp.clickExpEmployee();
-		boolean confirm= driver.getPageSource().contains("Peter Mac Anderson");
-		
-		if (confirm==true) {
-			
-			Assert.assertTrue(true);
+			log.info("adding successful");
 			log.info("test passed");
 		}
-		else {
+		else
+		{
 			Assert.assertTrue(false);
 			log.info("test failed");
-		}
-		
-		*/
-		
-		
-		
+		}	
 		
 		
 		
