@@ -48,7 +48,7 @@ public class TC_LoginTest_001 extends BaseClass{
 		Thread.sleep(3000);
 		
 		
-		//boolean confirm=driver.getPageSource().contains("actiTIME - Enter Time-Track");
+		//boolean confirm=driver.getPageSource().contains("OrangeHRM");
 		
 		/*
 		if (confirm == true) {
