@@ -23,7 +23,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="externel_lib/sikulix-2.0.3.jar"/>
-	<classpathentry kind="lib" path="externel_lib/sikulixapi-2.0.3.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
