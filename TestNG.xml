@@ -12,7 +12,7 @@
   <parameter name="browser" value="chrome"></parameter>
     
     <classes>
-    <class name="com.OrangeHRMAutomation.testcases.TC_ChangeProfilePicture_005"/>
+    <class name="com.OrangeHRMAutomation.testcases.TC_005_ChangeProfilePicture"/>
       <!-- class name="com.ActiTimeAutomation.testcases.TC_LoginTest_001"-->
       <!--  class name="com.OrangeHRMAutomation.testcases.TC_LogoDisplayed_002"-->
       
