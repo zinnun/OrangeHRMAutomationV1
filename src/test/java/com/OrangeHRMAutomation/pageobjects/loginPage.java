@@ -38,7 +38,7 @@ public class loginPage {
 	
 	@FindBy(xpath="//b[contains(text(),'Dashboard')]")
 	@CacheLookup
-	public static WebElement DashBoard;
+	public static WebElement dashBoard;
 	
 	
 	public void setUsername(String name)

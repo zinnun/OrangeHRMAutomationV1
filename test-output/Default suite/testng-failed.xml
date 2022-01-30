@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.OrangeHRMAutomation.testcases.TC_addEmployee_003">
+      <class name="com.OrangeHRMAutomation.testcases.TC_005_ChangeProfilePicture">
         <methods>
+          <include name="changeProfilePicture"/>
           <include name="openBrowser"/>
-          <include name="addNewCustomer"/>
           <include name="closeBrowser"/>
         </methods>
-      </class> <!-- com.OrangeHRMAutomation.testcases.TC_addEmployee_003 -->
+      </class> <!-- com.OrangeHRMAutomation.testcases.TC_005_ChangeProfilePicture -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -36,6 +36,10 @@ public class upload_profile_picture{
 	@CacheLookup
 	public WebElement upload_button;
 	
+	@FindBy(xpath = "//div[contains(@class, 'message success fadable') and contains(., 'Successfully Uploaded')]")
+	@CacheLookup
+	public static WebElement confirmationText;
+	
 	
 	
 	public void clickPIM()

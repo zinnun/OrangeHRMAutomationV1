@@ -18,12 +18,12 @@ public class TC_001_LoginTest extends BaseClass{
 		login(userName, passKey);
 		
 		
-		WebElement element= driver.findElement(By.xpath("//b[contains(text(),'Dashboard')]"));
+		//WebElement dashBoard= driver.findElement(By.xpath("//b[contains(text(),'Dashboard')]"));
 		
 		
-		if(element.isDisplayed()== true) 
+		if(loginPage.dashBoard.isDisplayed()== true) 
 		{
-			log.info("element is displayed");
+			log.info("Dashboard displayed");
 			Assert.assertTrue(true);
 			log.info("Login Test PASSED!!");
 		}
@@ -47,35 +47,6 @@ public class TC_001_LoginTest extends BaseClass{
 		lp.clickLoginButton();
 		Thread.sleep(3000);
 		
-		
-		//boolean confirm=driver.getPageSource().contains("OrangeHRM");
-		
-		/*
-		if (confirm == true) {
-			Assert.assertTrue(true);
-			log.info("test PASSED!");
-			
-		}else {
-			
-			Assert.assertTrue(false);
-			log.info("test Failed");
-		} */
-		
-		
-		/*
-		String title= driver.getTitle();
-		System.out.println(title);
-		
-		if(title.equals("OrangeHRM"))
-		{
-			Assert.assertTrue(true);
-			log.info("Login Test PASSED!!");
-		}
-		else {
-			Assert.assertTrue(false);
-			log.info("Test Failed");
-		} 
-		*/
 		
 	}
 }
