@@ -20,6 +20,14 @@ public class addEmployeePage {
 	@CacheLookup
 	public static WebElement PIM;	
 	
+	@FindBy(xpath= "//a[@id='welcome']")
+	@CacheLookup
+	public static WebElement account;	
+	
+	@FindBy(xpath= "//a[contains(text(),'Logout')]")
+	@CacheLookup
+	public static WebElement logout;	
+	
 	@FindBy(xpath= "//a[@id='menu_pim_addEmployee']")
 	@CacheLookup
 	public static WebElement addEmployee;
