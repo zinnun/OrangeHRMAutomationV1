@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="OrangeHRMAutomationV1" duration-ms="57037" started-at="2022-03-25T04:54:33Z" finished-at="2022-03-25T04:55:30Z">
+  <suite name="OrangeHRMAutomationV1" duration-ms="55789" started-at="2022-03-25T12:00:24Z" finished-at="2022-03-25T12:01:20Z">
     <groups>
     </groups>
-    <test name="OrangeHRMTest" duration-ms="57037" started-at="2022-03-25T04:54:33Z" finished-at="2022-03-25T04:55:30Z">
+    <test name="OrangeHRMTest" duration-ms="55789" started-at="2022-03-25T12:00:24Z" finished-at="2022-03-25T12:01:20Z">
       <class name="com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven">
-        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven@13deb50e]" name="openBrowser" is-config="true" duration-ms="7263" started-at="2022-03-25T04:54:33Z" finished-at="2022-03-25T04:54:41Z">
+        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven@13deb50e]" name="openBrowser" is-config="true" duration-ms="6747" started-at="2022-03-25T12:00:24Z" finished-at="2022-03-25T12:00:31Z">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="addNewCustomer(java.lang.String, java.lang.String)[pri:0, instance:com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven@13deb50e]" name="addNewCustomer" duration-ms="22098" started-at="2022-03-25T04:54:41Z" data-provider="LoginData" finished-at="2022-03-25T04:55:03Z">
+        <test-method status="PASS" signature="addNewCustomer(java.lang.String, java.lang.String)[pri:0, instance:com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven@13deb50e]" name="addNewCustomer" duration-ms="20909" started-at="2022-03-25T12:00:31Z" data-provider="LoginData" finished-at="2022-03-25T12:00:52Z">
           <params>
             <param index="0">
               <value>
@@ -34,7 +34,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addNewCustomer -->
-        <test-method status="PASS" signature="addNewCustomer(java.lang.String, java.lang.String)[pri:0, instance:com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven@13deb50e]" name="addNewCustomer" duration-ms="13591" started-at="2022-03-25T04:55:03Z" data-provider="LoginData" finished-at="2022-03-25T04:55:17Z">
+        <test-method status="PASS" signature="addNewCustomer(java.lang.String, java.lang.String)[pri:0, instance:com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven@13deb50e]" name="addNewCustomer" duration-ms="13610" started-at="2022-03-25T12:00:52Z" data-provider="LoginData" finished-at="2022-03-25T12:01:06Z">
           <params>
             <param index="0">
               <value>
@@ -50,7 +50,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addNewCustomer -->
-        <test-method status="PASS" signature="addNewCustomer(java.lang.String, java.lang.String)[pri:0, instance:com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven@13deb50e]" name="addNewCustomer" duration-ms="13620" started-at="2022-03-25T04:55:17Z" data-provider="LoginData" finished-at="2022-03-25T04:55:30Z">
+        <test-method status="PASS" signature="addNewCustomer(java.lang.String, java.lang.String)[pri:0, instance:com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven@13deb50e]" name="addNewCustomer" duration-ms="13917" started-at="2022-03-25T12:01:06Z" data-provider="LoginData" finished-at="2022-03-25T12:01:20Z">
           <params>
             <param index="0">
               <value>
@@ -66,7 +66,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addNewCustomer -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven@13deb50e]" name="closeBrowser" is-config="true" duration-ms="0" started-at="2022-03-25T04:55:30Z" finished-at="2022-03-25T04:55:30Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven@13deb50e]" name="closeBrowser" is-config="true" duration-ms="0" started-at="2022-03-25T12:01:20Z" finished-at="2022-03-25T12:01:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

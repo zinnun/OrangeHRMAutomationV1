@@ -3,8 +3,6 @@ package com.OrangeHRMAutomation.testcases;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -54,6 +52,7 @@ public class TC_006_addEmployee_DataDriven extends BaseClass{
 			log.info("adding " + first_name+ " "+last_name+" successful");
 			log.info("Test Passed");
 
+			wait.until(ExpectedConditions.visibilityOf(addEmployeePage.account));
 			addEmployeePage.account.click();
 			Thread.sleep(1500);
 			action.moveToElement(addEmployeePage.logout).click().build().perform();
@@ -63,15 +62,13 @@ public class TC_006_addEmployee_DataDriven extends BaseClass{
 		{
 			Assert.assertTrue(false);
 			log.info("Test Failed!!");
+
 		}
-		
+
 	}
 
 	
-
-	
-	// data provider method for the method "loginDDT"
-	
+	// data provider method for the method "loginDDT"	
 	@DataProvider(name="LoginData")
 	String[][] getData() throws IOException
 	{

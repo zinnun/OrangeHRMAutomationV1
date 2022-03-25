@@ -54,8 +54,8 @@ public class BaseClass {
 	@AfterClass
 	public void closeBrowser()
 	{
-		//driver.quit();
-		//log.info("browser closed");
+		driver.quit();
+		log.info("browser closed");
 	}
 
 }
