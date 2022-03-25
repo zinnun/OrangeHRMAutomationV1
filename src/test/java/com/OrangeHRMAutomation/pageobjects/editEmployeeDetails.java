@@ -128,14 +128,7 @@ public class editEmployeeDetails {
 	@CacheLookup
 	public static WebElement personalInfo;
 	
-	//div[contains(text(), ' Successfully Saved')]
-	
-	
-	
-	
-	
-	
-	
+
 	
 	public void clickPIM()
 	{

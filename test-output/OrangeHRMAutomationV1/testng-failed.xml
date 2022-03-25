@@ -7,13 +7,13 @@
   <test thread-count="5" name="OrangeHRMTest(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.OrangeHRMAutomation.testcases.TC_005_ChangeProfilePicture">
+      <class name="com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven">
         <methods>
-          <include name="changeProfilePicture"/>
           <include name="openBrowser"/>
+          <include name="addNewCustomer" invocation-numbers="1 2"/>
           <include name="closeBrowser"/>
         </methods>
-      </class> <!-- com.OrangeHRMAutomation.testcases.TC_005_ChangeProfilePicture -->
+      </class> <!-- com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven -->
     </classes>
   </test> <!-- OrangeHRMTest(failed) -->
 </suite> <!-- Failed suite [OrangeHRMAutomationV1] -->
