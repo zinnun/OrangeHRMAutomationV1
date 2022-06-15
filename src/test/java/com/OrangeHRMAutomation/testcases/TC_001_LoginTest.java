@@ -1,7 +1,8 @@
 package com.OrangeHRMAutomation.testcases;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -9,44 +10,46 @@ import com.OrangeHRMAutomation.pageobjects.loginPage;
 
 public class TC_001_LoginTest extends BaseClass{
 	
-	@Test
-	public void loginOrange() throws InterruptedException
-	{
-		//TC_LoginTest_001.login(userName, passKey);
-		//TC_LoginTest_001 t1 = new TC_LoginTest_001();
-		//t1.login(userName, passKey);
-		login(userName, passKey);
-		
-		
-		//WebElement dashBoard= driver.findElement(By.xpath("//b[contains(text(),'Dashboard')]"));
-		
-		
-		if(loginPage.dashBoard.isDisplayed()== true) 
-		{
-			log.info("Dashboard displayed");
-			Assert.assertTrue(true);
-			log.info("Login Test PASSED!!");
-		}
-		else 
-		{
-			Assert.assertTrue(false);
-			log.info("Test Failed");
-		}
-	}
-	
-
-	public  void login(String name, String password) throws InterruptedException 
+	public void login(String username, String password) 
 	{
 		
 		loginPage lp= new loginPage(driver);
-		lp.setUsername(name);
+		//driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+		
+		lp.setUsername(username);
 		lp.setPassword(password);
 		log.info("Username & Password entered");
-		Thread.sleep(3000);
 		
 		lp.clickLoginButton();
-		Thread.sleep(3000);
-		
+		log.info("logged in");
 		
 	}
+	
+	@Test
+	public void loginOrange() throws InterruptedException, IOException
+	{	
+	
+		
+		login(userName, passKey);
+	
+		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+
+	
+		if(driver.getPageSource().contains("Dashboard")==true) 
+		{
+			Assert.assertTrue(true);
+			log.info("Login Test PASSED");
+		
+		}
+		else
+		{
+			takeScreenshot(driver, "loginOrange");
+			log.info("Test FAILED!!");
+			Assert.assertTrue(false);	
+		}
+
+	}
+	
+
+
 }

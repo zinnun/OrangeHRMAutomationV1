@@ -5,8 +5,9 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -23,22 +24,23 @@
   <body>
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
         <span>All suites</span>
-        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
-          <img class="collapse-all-icon" src="collapseall.gif">
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
           </img> <!-- collapse-all-icon -->
         </a> <!-- collapse-all-link -->
       </div> <!-- navigator-suite-header -->
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" class="navigator-link" panel-name="suite-OrangeHRMAutomationV1">
-              <span class="suite-name border-passed">OrangeHRMAutomationV1</span>
+            <a href="#" panel-name="suite-OrangeHRMAutomationV1" class="navigator-link">
+              <span class="suite-name border-failed">OrangeHRMAutomationV1</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,37 +50,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="test-xml-OrangeHRMAutomationV1">
-                    <span>E:\Eclipse Projects\OrangeHRMAutomationV1\TestNG.xml</span>
+                  <a href="#" panel-name="test-xml-OrangeHRMAutomationV1" class="navigator-link ">
+                    <span>E:\Eclipse-Projects\OrangeHRMAutomationV1\TestNG.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-OrangeHRMAutomationV1">
+                  <a href="#" panel-name="testlist-OrangeHRMAutomationV1" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-OrangeHRMAutomationV1">
+                  <a href="#" panel-name="group-OrangeHRMAutomationV1" class="navigator-link ">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-OrangeHRMAutomationV1">
+                  <a href="#" panel-name="times-OrangeHRMAutomationV1" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-OrangeHRMAutomationV1">
+                  <a href="#" panel-name="reporter-OrangeHRMAutomationV1" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-OrangeHRMAutomationV1">
+                  <a href="#" panel-name="ignored-methods-OrangeHRMAutomationV1" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-OrangeHRMAutomationV1">
+                  <a href="#" panel-name="chronological-OrangeHRMAutomationV1" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -91,31 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-OrangeHRMAutomationV1" class="hide-methods passed suite-OrangeHRMAutomationV1"> (hide)</a> <!-- hide-methods passed suite-OrangeHRMAutomationV1 -->
-                      <a href="#" panel-name="suite-OrangeHRMAutomationV1" class="show-methods passed suite-OrangeHRMAutomationV1"> (show)</a> <!-- show-methods passed suite-OrangeHRMAutomationV1 -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-OrangeHRMAutomationV1" class="hide-methods failed suite-OrangeHRMAutomationV1"> (hide)</a> <!-- hide-methods failed suite-OrangeHRMAutomationV1 -->
+                      <a href="#" panel-name="suite-OrangeHRMAutomationV1" class="show-methods failed suite-OrangeHRMAutomationV1"> (show)</a> <!-- show-methods failed suite-OrangeHRMAutomationV1 -->
                     </span>
-                    <div class="method-list-content passed suite-OrangeHRMAutomationV1">
+                    <div class="method-list-content failed suite-OrangeHRMAutomationV1">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-OrangeHRMAutomationV1" title="com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven" hash-for-method="addNewCustomer(Santi, Argo)">addNewCustomer(Santi, Argo)</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-OrangeHRMAutomationV1" title="com.OrangeHRMAutomation.testcases.TC_001_LoginTest" class="method navigator-link" hash-for-method="loginOrange">loginOrange</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-OrangeHRMAutomationV1" title="com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven" hash-for-method="addNewCustomer(Ben, Dover)">addNewCustomer(Ben, Dover)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-OrangeHRMAutomationV1" title="com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven" hash-for-method="addNewCustomer(Laura, Biding)">addNewCustomer(Laura, Biding)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-OrangeHRMAutomationV1 -->
+                    </div> <!-- method-list-content failed suite-OrangeHRMAutomationV1 -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -127,55 +119,43 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-OrangeHRMAutomationV1" class="panel OrangeHRMAutomationV1">
-          <div class="suite-OrangeHRMAutomationV1-class-passed">
+          <div class="suite-OrangeHRMAutomationV1-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.OrangeHRMAutomation.testcases.TC_001_LoginTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="addNewCustomer(Santi, Argo)">
-                  </a> <!-- addNewCustomer(Santi, Argo) -->
-                  <span class="method-name">addNewCustomer</span>
-                  <span class="parameters">(Santi, Argo)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="addNewCustomer(Ben, Dover)">
-                  </a> <!-- addNewCustomer(Ben, Dover) -->
-                  <span class="method-name">addNewCustomer</span>
-                  <span class="parameters">(Ben, Dover)</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="addNewCustomer(Laura, Biding)">
-                  </a> <!-- addNewCustomer(Laura, Biding) -->
-                  <span class="method-name">addNewCustomer</span>
-                  <span class="parameters">(Laura, Biding)</span>
+                  <a name="loginOrange">
+                  </a> <!-- loginOrange -->
+                  <span class="method-name">loginOrange</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.OrangeHRMAutomation.testcases.TC_001_LoginTest.loginOrange(TC_001_LoginTest.java:48)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-OrangeHRMAutomationV1-class-passed -->
+          </div> <!-- suite-OrangeHRMAutomationV1-class-failed -->
         </div> <!-- panel OrangeHRMAutomationV1 -->
         <div panel-name="test-xml-OrangeHRMAutomationV1" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">E:\Eclipse Projects\OrangeHRMAutomationV1\TestNG.xml</span>
+            <span class="header-content">E:\Eclipse-Projects\OrangeHRMAutomationV1\TestNG.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;OrangeHRMAutomationV1&quot;&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;OrangeHRMAutomationV1&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;com.OrangeHRMAutomation.utilities.Reporting&quot;/&gt;
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;OrangeHRMTest&quot;&gt;
     &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven&quot;/&gt;
+      &lt;class name=&quot;com.OrangeHRMAutomation.testcases.TC_001_LoginTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- OrangeHRMTest --&gt;
 &lt;/suite&gt; &lt;!-- OrangeHRMAutomationV1 --&gt;
@@ -215,24 +195,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'addNewCustomer')
-data.setCell(0, 2, 'com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven')
-data.setCell(0, 3, 20909);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'addNewCustomer')
-data.setCell(1, 2, 'com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven')
-data.setCell(1, 3, 13917);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'addNewCustomer')
-data.setCell(2, 2, 'com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven')
-data.setCell(2, 3, 13610);
+data.setCell(0, 1, 'loginOrange')
+data.setCell(0, 2, 'com.OrangeHRMAutomation.testcases.TC_001_LoginTest')
+data.setCell(0, 3, 3246);
 window.suiteTableData['OrangeHRMAutomationV1']= { tableData: data, tableDiv: 'times-div-OrangeHRMAutomationV1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 48 seconds</span>
+              <span class="suite-total-time">Total running time: 3 seconds</span>
               <div id="times-div-OrangeHRMAutomationV1">
               </div> <!-- times-div-OrangeHRMAutomationV1 -->
             </div> <!-- times-div -->
@@ -258,30 +230,25 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.OrangeHRMAutomation.testcases.TC_001_LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">openBrowser(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">addNewCustomer(Laura, Biding)</span>
-                <span class="method-start">7214 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">addNewCustomer(Santi, Argo)</span>
-                <span class="method-start">28134 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">addNewCustomer(Ben, Dover)</span>
-                <span class="method-start">41745 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">loginOrange</span>
+                <span class="method-start">7690 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">55664 ms</span>
+                <span class="method-start">10958 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
 </html>

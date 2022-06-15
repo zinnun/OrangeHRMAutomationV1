@@ -2,19 +2,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="OrangeHRMAutomationV1">
 
-<!-- suite name="Suite" parallel="tests" -->    <!-- to test parallely at a time, conducting two or more classes is also possible. if test pakage contains multiple classes  -->
+<!-- suite name="Suite" parallel="tests" -->    <!-- to test parallely at a time, conducting two or more classes is also possible. if test pacSkage contains multiple classes  -->
 
 	<listeners>
-	<listener class-name="com.OrangeHRMAutomation.utilities.Reporting"/>
+		<listener class-name="com.OrangeHRMAutomation.utilities.Reporting"/>
 	</listeners>
 
   <test name="OrangeHRMTest">
   <parameter name="browser" value="chrome"></parameter>
     
     <classes>
-    <class name="com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven"/>
-      <!-- class name="com.ActiTimeAutomation.testcases.TC_001_LoginTest"-->
-      <!--  class name="com.OrangeHRMAutomation.testcases.TC_002_LogoDisplayed"-->
+    <!--class name="com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven"/-->
+    <class name="com.OrangeHRMAutomation.testcases.TC_001_LoginTest"/>
+    <!--class name="com.OrangeHRMAutomation.testcases.TC_002_LogoDisplayed"/-->
 
       
     </classes>
