@@ -11,32 +11,32 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class XLUtils {
-	
+
 	public static FileInputStream fi;
 	public static FileOutputStream fo;
 	public static XSSFWorkbook wb;
 	public static XSSFSheet ws;
 	public static XSSFRow row;
 	public static XSSFCell cell;
-	
 
-	
+
+
 	public  static int getRowCount(String xlfile, String xlsheet) throws IOException {
-		
+
 		fi= new FileInputStream(xlfile);
 		wb= new XSSFWorkbook(fi);
 		ws= wb.getSheet(xlsheet);
 		int rowCount= ws.getLastRowNum();
 		wb.close();
 		fi.close();
-		
+
 		return rowCount;
-		
+
 	}
-	
-	
+
+
 	public  static int getCellcount(String xlfile, String xlsheet, int rownum) throws IOException {
-		
+
 		fi= new FileInputStream(xlfile);
 		wb= new XSSFWorkbook(fi);
 		ws= wb.getSheet(xlsheet);
@@ -44,20 +44,20 @@ public class XLUtils {
 		int cellCount=row.getLastCellNum();
 		wb.close();
 		fi.close();
-		
+
 		return cellCount;
-		
+
 	}
-	
-	
+
+
 	public  static String getCellData(String xlfile, String xlsheet, int rownum, int colNUm) throws IOException {
-		
+
 		fi= new FileInputStream(xlfile);
 		wb= new XSSFWorkbook(fi);
 		ws= wb.getSheet(xlsheet);
 		row= ws.getRow(rownum);
 		cell= row.getCell(colNUm);
-		
+
 		String data;
 		try {
 			DataFormatter formatter = new DataFormatter();
@@ -68,46 +68,30 @@ public class XLUtils {
 		}
 		wb.close();
 		fi.close();
-		
+
 		return data;
-		
+
 	}
-	
-	
+
+
 	public  static void setCellData (String xlfile, String xlsheet, int rownum, int colNUm, String data) throws IOException {
-		
+
 		fi= new FileInputStream(xlfile);
 		wb= new XSSFWorkbook(fi);
 		ws= wb.getSheet(xlsheet);
 		row= ws.getRow(rownum);
 		cell= row.createCell(colNUm);
 		fo= new FileOutputStream(xlfile);
-		
+
 		wb.write(fo);
-		
-		
+
+
 		wb.close();
 		fi.close();
 		fo.close();
-		
-		
+
+
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

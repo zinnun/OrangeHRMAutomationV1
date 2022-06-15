@@ -5,9 +5,15 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
+import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
+import org.testng.annotations.BeforeClass;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -17,74 +23,82 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+
 public class Reporting extends TestListenerAdapter{
 
-
-	public ExtentHtmlReporter htmlReporter;
-	public ExtentReports extent;
-	public ExtentTest logger;
+	//WebDriver driver;
+	public ExtentHtmlReporter exHtmlReporter;
+	public ExtentReports exReports;
+	public ExtentTest exTest;
+	
 	
 	public void onStart(ITestContext testcontext) {
 		
-		//setting the name of tbe report
+		//setting the name of the report
 		String timeStamp= new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 		String repName= "Test_Report-"+timeStamp+".html";
 		
 		
-		htmlReporter= new ExtentHtmlReporter(System.getProperty("user.dir")+"/test-output/"+repName);
-		htmlReporter.loadXMLConfig(System.getProperty("user.dir")+ "/extent-config.xml");
+		exHtmlReporter= new ExtentHtmlReporter(System.getProperty("user.dir")+"/test-output/"+repName);
+		exHtmlReporter.loadXMLConfig(System.getProperty("user.dir")+ "/extent-config.xml");
 		
-		extent= new ExtentReports();
+		exReports= new ExtentReports();
 		
-		extent.attachReporter(htmlReporter);
-		extent.setSystemInfo("Host name", "localhost");
-		extent.setSystemInfo("Environment", "Windows 10");
-		extent.setSystemInfo("Tester", "Zinnun");
+		exReports.attachReporter(exHtmlReporter);
+		exReports.setSystemInfo("Host name", "localhost");
+		exReports.setSystemInfo("Environment", "Windows 10");
+		exReports.setSystemInfo("Tester", "Zinnun");
 		
-		htmlReporter.config().setDocumentTitle("OrangeHRM Test Project");
-		htmlReporter.config().setReportName("Functional Test Report");
-		//htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP); 
-		htmlReporter.config().setTheme(Theme.DARK);
+		exHtmlReporter.config().setDocumentTitle("OrangeHRM Test Project");
+		exHtmlReporter.config().setReportName("Functional Test Report");
+		exHtmlReporter.config().setTheme(Theme.DARK);
 		
 	}
 	
 	public void onTestSuccess(ITestResult tr) {
-		logger=extent.createTest(tr.getName());
-		logger.log(Status.PASS, MarkupHelper.createLabel(tr.getName(), ExtentColor.GREEN));
+		exTest=exReports.createTest(tr.getName());
+		exTest.log(Status.PASS, MarkupHelper.createLabel(tr.getName(), ExtentColor.GREEN));
 		
 	}
 	
-	public void onTestFailure(ITestResult tr) {
+	public void onTestFailure(ITestResult tr){
+	
 		
-		logger=extent.createTest(tr.getName());
-		logger.log(Status.FAIL, MarkupHelper.createLabel(tr.getName(), ExtentColor.RED));
-		/*
+		exTest=exReports.createTest(tr.getName());
+		exTest.log(Status.FAIL, MarkupHelper.createLabel(tr.getName(), ExtentColor.RED));
+		
 		String screenshotPath= System.getProperty("user.dir")+"\\Screenshots\\"+tr.getName()+".png";
+		System.out.println(screenshotPath);
 		
 		File f = new File(screenshotPath);
 		
 		if (f.exists()) {
 			try 
 			{
-				logger.fail("Screenshot is below: " + logger.addScreenCaptureFromPath(screenshotPath));	//logger.addScreencastFromPath(screenshotPath
+				exTest.fail("Screenshot is below: " + exTest.addScreenCaptureFromPath(screenshotPath));	
+				
 			} 
 			catch (IOException e) 
 			{
 				e.printStackTrace();
 			}
-		} */
+		} 
 		
 	}
 	
 	public void onTestSkiped(ITestResult tr) {
-		logger=extent.createTest(tr.getName());
-		logger.log(Status.SKIP, MarkupHelper.createLabel(tr.getName(), ExtentColor.ORANGE));
+		exTest=exReports.createTest(tr.getName());
+		exTest.log(Status.SKIP, MarkupHelper.createLabel(tr.getName(), ExtentColor.ORANGE));
 		
 	}
 	
 	public void onFinish(ITestContext testcontext) {
-		extent.flush();
+		exReports.flush();
 	}
+
+
 	
 	
 }

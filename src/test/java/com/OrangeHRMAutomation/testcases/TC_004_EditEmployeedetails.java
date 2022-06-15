@@ -1,5 +1,8 @@
 package com.OrangeHRMAutomation.testcases;
 
+import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -9,56 +12,54 @@ import com.OrangeHRMAutomation.pageobjects.editEmployeeDetails;
 import com.OrangeHRMAutomation.utilities.DropDownSelect;
 
 public class TC_004_EditEmployeedetails extends BaseClass{
-	
+
 	@Test
-	public void editInfo() throws InterruptedException {
-		
+	public void editInfo() throws InterruptedException, IOException {
+
+		WebDriverWait wait = new WebDriverWait(driver, 3);
 		TC_001_LoginTest t1 = new TC_001_LoginTest();
 		t1.login(userName, passKey);
-		
+
 		editEmployeeDetails emp = new editEmployeeDetails(driver);
 		emp.clickPIM();
 		emp.clickEmployeeList();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
 		emp.enterEmployeeName("peter mac");
-		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(emp.search_result));
 		emp.seach_suggestion_click();
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS) ;
 		emp.clickSeach();
-		Thread.sleep(3000);
+		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS) ;
 		emp.click_search_result();
 		log.info("search result clicked");
 		//Thread.sleep(3000);
+
 		
-		
-		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.visibilityOf(editEmployeeDetails.personalInfo));
+		wait.until(ExpectedConditions.visibilityOf(emp.personalInfo));
 		emp.clickEdit();
+		
+		// putting some hard coded value
 		emp.enterFirstName("Peter");
 		emp.enterMiddleName("Mac");
 		emp.enterLastName("Anderson");
 		emp.enterLicense("5063940");
 		emp.clickLicenseExpiry();
-		
+
 		DropDownSelect.dropdownByVisibleText(emp.licenseExpiryMonth, "Jun");
 		DropDownSelect.dropdownByVisibleText(emp.licenseExpiryYear, "1984");
 		emp.licenseExpiryDay.click();
-		
+
 		emp.clickMaleRadio();
 		DropDownSelect.dropdownByIndex(emp.maritalStatus, 1);
-		
+
 		DropDownSelect.dropdownByVisibleText(emp.nationality, "American");
-		
+
 		emp.saveButton.click();
-		
 
-		
 
-		
-		wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOf(editEmployeeDetails.confirmationText)); 
+		wait.until(ExpectedConditions.visibilityOf(editEmployeeDetails.confirmationText));
 		String fadable_message=editEmployeeDetails.confirmationText.getText();
-		
+
 
 		if(fadable_message.contains("Successfully Saved"))
 		{
@@ -68,13 +69,14 @@ public class TC_004_EditEmployeedetails extends BaseClass{
 		}
 		else
 		{
+			takeScreenshot(driver, "editInfo");
 			Assert.assertTrue(false);
 			log.info("test failed");
-		}	
-		
-		
-		
+		}
+
+
+
 	}
-	
+
 
 }
