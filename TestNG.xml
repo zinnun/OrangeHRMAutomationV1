@@ -12,12 +12,14 @@
   <parameter name="browser" value="chrome"></parameter>
     
     <classes>
+
     	<class name="com.OrangeHRMAutomation.testcases.TC_001_LoginTest"/>
       	<class name="com.OrangeHRMAutomation.testcases.TC_002_LogoDisplayed"/>
       	<class name="com.OrangeHRMAutomation.testcases.TC_003_addEmployee"/>
       	<class name="com.OrangeHRMAutomation.testcases.TC_004_EditEmployeedetails"/>
       	<class name="com.OrangeHRMAutomation.testcases.TC_005_ChangeProfilePicture"/>
       	<class name="com.OrangeHRMAutomation.testcases.TC_006_addEmployee_DataDriven"/>
+
       
     </classes>
   </test> <!-- Test -->
