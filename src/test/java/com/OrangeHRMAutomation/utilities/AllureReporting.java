@@ -28,28 +28,28 @@ public class AllureReporting implements ITestListener{
 	
 	@Override
 	public void onStart(ITestContext iTestContext) {
-		System.out.println("I am in onStart method " + iTestContext.getName());
+		System.out.println("onStart method " + iTestContext.getName());
 		iTestContext.setAttribute("WebDriver", com.OrangeHRMAutomation.testcases.BaseClass.getDriver());
 	}
 
 	@Override
 	public void onFinish(ITestContext iTestContext) {
-		System.out.println("I am in onFinish method " + iTestContext.getName());
+		System.out.println("onFinish method " + iTestContext.getName());
 	}
 
 	@Override
 	public void onTestStart(ITestResult iTestResult) {
-		System.out.println("I am in onTestStart method " + getTestMethodName(iTestResult) + " start");
+		System.out.println("onTestStart method " + getTestMethodName(iTestResult) + " start");
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult iTestResult) {
-		System.out.println("I am in onTestSuccess method " + getTestMethodName(iTestResult) + " succeed");
+		System.out.println("onTestSuccess method " + getTestMethodName(iTestResult) + " succeed");
 	}
 
 	@Override
 	public void onTestFailure(ITestResult iTestResult) {
-		System.out.println("I am in onTestFailure method " + getTestMethodName(iTestResult) + " failed");
+		System.out.println("onTestFailure method " + getTestMethodName(iTestResult) + " failed");
 		Object testClass = iTestResult.getInstance();
 		WebDriver driver = com.OrangeHRMAutomation.testcases.BaseClass.getDriver();
 		// Allure ScreenShot and SaveTestLog
@@ -63,7 +63,7 @@ public class AllureReporting implements ITestListener{
 	
 	@Override
 	public void onTestSkipped(ITestResult iTestResult) {
-		System.out.println("I am in onTestSkipped method " + getTestMethodName(iTestResult) + " skipped");
+		System.out.println("onTestSkipped method " + getTestMethodName(iTestResult) + " skipped");
 	}
 
 	@Override

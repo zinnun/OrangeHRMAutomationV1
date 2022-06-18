@@ -6,34 +6,37 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.OrangeHRMAutomation.pageobjects.editEmployeeDetails;
+import com.OrangeHRMAutomation.utilities.AllureReporting;
 import com.OrangeHRMAutomation.utilities.DropDownSelect;
 
+@Listeners({AllureReporting.class})
 public class TC_004_EditEmployeedetails extends BaseClass{
 
 	@Test
 	public void editInfo() throws InterruptedException, IOException {
 
-		WebDriverWait wait = new WebDriverWait(driver, 3);
+		WebDriverWait wait = new WebDriverWait(driver, 4);
 		TC_001_LoginTest t1 = new TC_001_LoginTest();
 		t1.login(userName, passKey);
 
 		editEmployeeDetails emp = new editEmployeeDetails(driver);
 		emp.clickPIM();
 		emp.clickEmployeeList();
-		driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
+		Thread.sleep(2000);
 		emp.enterEmployeeName("peter mac");
-		wait.until(ExpectedConditions.visibilityOf(emp.search_name_suggestion));
+		Thread.sleep(2000);
+		//driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS) ;
 		emp.seach_suggestion_click();
 		driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS) ;
-		emp.clickSeach();
+		emp.clickSearch();
 		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS) ;
 		emp.click_search_result();
 		log.info("search result clicked");
-		//Thread.sleep(3000);
-
 		
 		wait.until(ExpectedConditions.visibilityOf(emp.personalInfo));
 		emp.clickEdit();

@@ -2,6 +2,7 @@ package com.OrangeHRMAutomation.testcases;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
@@ -30,9 +31,33 @@ public class BaseClass {
 	public String userName = rc.getUserName();
 	public String passKey = rc.getPassword();
 
-
+	public static ThreadLocal<WebDriver> tdriver =
+			new ThreadLocal<WebDriver>();
+	
+	
 	@Parameters("browser")
 	@BeforeClass
+	public void initialize_driver(String parameter) {
+		System.out.println(parameter);
+		
+		log = Logger.getLogger("OrangeHRM");
+		PropertyConfigurator.configure("log4j.properties");
+		
+		// throws a chrome/FF/edge driver instance
+		openBrowser(parameter);
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		tdriver.set(driver);  
+		getDriver();
+		log.info("Test initiated, browser launched");
+		driver.get(baseUrl);
+		log.info("url opened");
+	}
+
+	public static synchronized WebDriver getDriver() {
+		return tdriver.get();
+	}
+
 	public void openBrowser(String parameter)	//the parameter comes from TestNG.xml
 	{
 		log = Logger.getLogger("OrangeHRM");

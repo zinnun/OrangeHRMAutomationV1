@@ -57,7 +57,7 @@ public class upload_profile_picture{
 		employee_photo.click();
 	}
 
-	public void sending_choose_file(String photo_path)
+	public void sending_chosen_file(String photo_path)
 	{
 		choose_file.sendKeys(photo_path);
 	}

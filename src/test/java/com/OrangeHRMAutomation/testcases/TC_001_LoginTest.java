@@ -4,10 +4,13 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.OrangeHRMAutomation.pageobjects.loginPage;
+import com.OrangeHRMAutomation.utilities.AllureReporting;
 
+@Listeners({AllureReporting.class})
 public class TC_001_LoginTest extends BaseClass{
 	
 	public void login(String username, String password) 

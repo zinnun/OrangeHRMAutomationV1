@@ -159,7 +159,7 @@ public class editEmployeeDetails {
 //		searchName.sendKeys(name);
 //	}
 
-	public void clickSeach()
+	public void clickSearch()
 	{
 		searchButton.click();
 	}

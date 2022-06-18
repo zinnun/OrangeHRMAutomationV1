@@ -11,15 +11,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.OrangeHRMAutomation.pageobjects.loginPage;
+import com.OrangeHRMAutomation.utilities.AllureReporting;
 
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.comparison.ImageDiff;
 import ru.yandex.qatools.ashot.comparison.ImageDiffer;
 
+@Listeners({AllureReporting.class})
 public class TC_002_LogoDisplayed extends BaseClass{
 
 

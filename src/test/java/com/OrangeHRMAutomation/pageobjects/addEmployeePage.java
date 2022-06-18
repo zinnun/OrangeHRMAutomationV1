@@ -18,19 +18,19 @@ public class addEmployeePage {
 
 	@FindBy(xpath= "//b[contains(text(),'PIM')]")
 	@CacheLookup
-	public static WebElement PIM;
+	public WebElement PIM;
 
 	@FindBy(xpath= "//a[@id='welcome']")
 	@CacheLookup
-	public static WebElement account;
+	public WebElement account;
 
-	@FindBy(xpath= "//a[contains(text(),'Logout')]")
+	@FindBy(xpath= "//a[@href='/index.php/auth/logout']") 
 	@CacheLookup
-	public static WebElement logout;
+	public WebElement logout;
 
 	@FindBy(xpath= "//a[@id='menu_pim_addEmployee']")
 	@CacheLookup
-	public static WebElement addEmployee;
+	public WebElement addEmployee;
 
 	@FindBy(xpath= "//input[@id='firstName']")
 	@CacheLookup
@@ -51,6 +51,10 @@ public class addEmployeePage {
 	@FindBy(xpath= "//input[@id='btnSave']")
 	@CacheLookup
 	WebElement saveButton;
+	
+	@FindBy(xpath="//input[@id='txtUsername']")
+	@CacheLookup
+	public WebElement txtUsername;
 
 
 	//Actions act = new Actions(driver);

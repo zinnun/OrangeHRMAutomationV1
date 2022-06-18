@@ -3,18 +3,24 @@ package com.OrangeHRMAutomation.testcases;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.OrangeHRMAutomation.pageobjects.addEmployeePage;
+import com.OrangeHRMAutomation.utilities.AllureReporting;
 import com.OrangeHRMAutomation.utilities.XLUtils;
 
+@Listeners({AllureReporting.class})
 public class TC_006_addEmployee_DataDriven extends BaseClass{
-
+	
 
 	@Test(dataProvider = "LoginData")
 	public void addNewCustomerDD(String first_name, String last_name) throws InterruptedException, IOException
@@ -30,9 +36,9 @@ public class TC_006_addEmployee_DataDriven extends BaseClass{
 		//declaring actions class to move over the webelement
 		Actions action = new Actions(driver);
 
-		wait.until(ExpectedConditions.visibilityOf(addEmployeePage.PIM));
-		action.moveToElement(addEmployeePage.PIM).build().perform();
-		action.moveToElement(addEmployeePage.addEmployee).click().build().perform();
+		wait.until(ExpectedConditions.visibilityOf(emp1.PIM));
+		action.moveToElement(emp1.PIM).build().perform();
+		action.moveToElement(emp1.addEmployee).click().build().perform();
 		log.info("add employee page opened");
 
 		//emp1.mouseOverAddEmployee();
@@ -41,21 +47,27 @@ public class TC_006_addEmployee_DataDriven extends BaseClass{
 		emp1.enterLastName(last_name);
 
 		emp1.clickSaveButton();
-
+		driver.manage().timeouts().pageLoadTimeout(3, TimeUnit.SECONDS);
+		
 
 		boolean confirm = driver.getPageSource().contains("Personal Details");
 
 
-		if(confirm)
+		if(confirm==true)
 		{
 			Assert.assertTrue(true);
 			log.info("adding " + first_name+ " "+last_name+" successful");
 			log.info("Test Passed");
 
-			wait.until(ExpectedConditions.visibilityOf(addEmployeePage.account));
-			addEmployeePage.account.click();
-			driver.manage().timeouts().implicitlyWait(1500,TimeUnit.MILLISECONDS) ;
-			action.moveToElement(addEmployeePage.logout).click().build().perform();
+			wait.until(ExpectedConditions.visibilityOf(emp1.account));
+			Thread.sleep(1500);
+			emp1.account.click();
+			Thread.sleep(2000);
+		//	driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS) ;
+		//	action.moveToElement(addEmployeePage.logout).click().build().perform();
+			emp1.logout.click();
+			
+			wait.until(ExpectedConditions.visibilityOf(emp1.txtUsername));
 
 		}
 		else

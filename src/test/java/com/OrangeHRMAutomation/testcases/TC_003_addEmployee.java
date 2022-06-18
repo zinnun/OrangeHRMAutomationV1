@@ -7,10 +7,13 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.OrangeHRMAutomation.pageobjects.addEmployeePage;
+import com.OrangeHRMAutomation.utilities.AllureReporting;
 
+@Listeners({AllureReporting.class})
 public class TC_003_addEmployee extends BaseClass{
 
 
@@ -23,22 +26,22 @@ public class TC_003_addEmployee extends BaseClass{
 		log.info("login successful");
 
 		WebDriverWait wait = new WebDriverWait(driver, 1);
-		addEmployeePage emp1 = new addEmployeePage(driver);
+		addEmployeePage empl = new addEmployeePage(driver);
 
 		//declaring actions class to move over the webelement
 		Actions action = new Actions(driver);
 
-		wait.until(ExpectedConditions.visibilityOf(addEmployeePage.PIM));
-		action.moveToElement(addEmployeePage.PIM).build().perform();
-		action.moveToElement(addEmployeePage.addEmployee).click().build().perform();
+		wait.until(ExpectedConditions.visibilityOf(empl.PIM));
+		action.moveToElement(empl.PIM).build().perform();
+		action.moveToElement(empl.addEmployee).click().build().perform();
 		log.info("add employee page opened");
 
 		//emp1.mouseOverAddEmployee();
-		emp1.enterFirstName("Tom");
+		empl.enterFirstName("Tom");
 		//emp1.enterMiddletName("");
-		emp1.enterLastName("Cat");
-		emp1.enterEmployeeID(2059);
-		emp1.clickSaveButton();
+		empl.enterLastName("Cat");
+		empl.enterEmployeeID(2059);
+		empl.clickSaveButton();
 
 
 		boolean confirm = driver.getPageSource().contains("Personal Details");
