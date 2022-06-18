@@ -29,9 +29,9 @@ public class editEmployeeDetails {
 	WebElement searchName;
 
 
-	@FindBy(xpath= "//div[@class='ac_results']")
+	@FindBy(xpath= "//li[@class='ac_even ac_over']")
 	@CacheLookup
-	WebElement search_name_suggestion;
+	public WebElement search_name_suggestion;
 
 
 	@FindBy(xpath= "//input[@id='searchBtn']")

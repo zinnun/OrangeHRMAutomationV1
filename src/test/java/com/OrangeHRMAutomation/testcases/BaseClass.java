@@ -78,8 +78,8 @@ public class BaseClass {
 			TakesScreenshot ts= (TakesScreenshot) driver;
 			File source= ts.getScreenshotAs(OutputType.FILE);
 
-			File dest = new File(screenshotPath);
-			FileUtils.copyFile(source, dest);
+			File destination = new File(screenshotPath);
+			FileUtils.copyFile(source, destination);
 
 			log.info("screenshot taken");
 	}

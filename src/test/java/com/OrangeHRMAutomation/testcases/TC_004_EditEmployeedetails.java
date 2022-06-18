@@ -25,7 +25,7 @@ public class TC_004_EditEmployeedetails extends BaseClass{
 		emp.clickEmployeeList();
 		driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
 		emp.enterEmployeeName("peter mac");
-		wait.until(ExpectedConditions.visibilityOf(emp.search_result));
+		wait.until(ExpectedConditions.visibilityOf(emp.search_name_suggestion));
 		emp.seach_suggestion_click();
 		driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS) ;
 		emp.clickSeach();
@@ -70,6 +70,7 @@ public class TC_004_EditEmployeedetails extends BaseClass{
 		else
 		{
 			takeScreenshot(driver, "editInfo");
+			driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS) ;
 			Assert.assertTrue(false);
 			log.info("test failed");
 		}

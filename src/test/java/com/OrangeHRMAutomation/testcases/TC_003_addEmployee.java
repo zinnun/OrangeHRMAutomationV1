@@ -52,6 +52,7 @@ public class TC_003_addEmployee extends BaseClass{
 		else
 		{
 			takeScreenshot(driver, "addNewCustomer");
+			driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS) ;
 			Assert.assertTrue(false);
 			log.info("test failed");
 		}

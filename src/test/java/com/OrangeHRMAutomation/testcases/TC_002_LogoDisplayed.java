@@ -3,6 +3,7 @@ package com.OrangeHRMAutomation.testcases;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 
@@ -76,6 +77,7 @@ public class TC_002_LogoDisplayed extends BaseClass{
 		else
 		{
 			takeScreenshot(driver, "logoCheck");
+			driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS) ;
 			Assert.assertTrue(false);
 			log.info("Test Failed");
 		}

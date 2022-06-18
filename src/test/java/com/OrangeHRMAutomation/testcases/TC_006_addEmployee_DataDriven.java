@@ -17,7 +17,7 @@ public class TC_006_addEmployee_DataDriven extends BaseClass{
 
 
 	@Test(dataProvider = "LoginData")
-	public void addNewCustomer(String first_name, String last_name) throws InterruptedException
+	public void addNewCustomerDD(String first_name, String last_name) throws InterruptedException, IOException
 	{
 		TC_001_LoginTest tc1 = new TC_001_LoginTest();
 		tc1.login(userName, passKey);
@@ -46,7 +46,7 @@ public class TC_006_addEmployee_DataDriven extends BaseClass{
 		boolean confirm = driver.getPageSource().contains("Personal Details");
 
 
-		if(confirm=true)
+		if(confirm)
 		{
 			Assert.assertTrue(true);
 			log.info("adding " + first_name+ " "+last_name+" successful");
@@ -60,6 +60,7 @@ public class TC_006_addEmployee_DataDriven extends BaseClass{
 		}
 		else
 		{
+			takeScreenshot(driver, "addNewCustomerDD");
 			Assert.assertTrue(false);
 			log.info("Test Failed!!");
 

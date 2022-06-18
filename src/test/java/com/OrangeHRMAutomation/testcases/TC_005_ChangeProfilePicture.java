@@ -50,6 +50,7 @@ public class TC_005_ChangeProfilePicture extends BaseClass{
 		else
 		{
 			takeScreenshot(driver, "changeProfilePicture");
+			driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS) ;
 			Assert.assertTrue(false);
 			log.info("test failed");
 		}
