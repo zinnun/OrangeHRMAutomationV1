@@ -18,19 +18,20 @@ public class addEmployeePage {
 
 	@FindBy(xpath= "//b[contains(text(),'PIM')]")
 	@CacheLookup
-	public WebElement PIM;
+	WebElement PIM;
 
 	@FindBy(xpath= "//a[@id='welcome']")
 	@CacheLookup
-	public WebElement account;
+	WebElement account;
 
 	@FindBy(xpath= "//a[@href='/index.php/auth/logout']") 
 	@CacheLookup
-	public WebElement logout;
+	WebElement logout;
 
 	@FindBy(xpath= "//a[@id='menu_pim_addEmployee']")
 	@CacheLookup
-	public WebElement addEmployee;
+	WebElement addEmployee;
+
 
 	@FindBy(xpath= "//input[@id='firstName']")
 	@CacheLookup
@@ -54,10 +55,30 @@ public class addEmployeePage {
 	
 	@FindBy(xpath="//input[@id='txtUsername']")
 	@CacheLookup
-	public WebElement txtUsername;
+	WebElement txtUsername;
 
 
 	//Actions act = new Actions(driver);
+	
+	public WebElement getPIM() {
+		return PIM;
+	}
+
+	public WebElement getAccount() {
+		return account;
+	}
+
+	public WebElement getLogout() {
+		return logout;
+	}
+
+	public WebElement getAddEmployee() {
+		return addEmployee;
+	}
+
+	public WebElement getTxtUsername() {
+		return txtUsername;
+	}
 
 	public void enterFirstName(String fName)
 	{

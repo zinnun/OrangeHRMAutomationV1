@@ -38,8 +38,8 @@ public class TC_005_ChangeProfilePicture extends BaseClass{
 
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOf(upload_profile_picture.confirmationText));
-		String fadable_message=upload_profile_picture.confirmationText.getText();
+		wait.until(ExpectedConditions.visibilityOf(upload_photo.getConfirmationText()));
+		String fadable_message=upload_photo.getConfirmationText().getText();
 		System.out.println(fadable_message);
 
 

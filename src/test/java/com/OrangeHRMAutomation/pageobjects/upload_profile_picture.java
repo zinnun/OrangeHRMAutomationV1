@@ -16,31 +16,35 @@ public class upload_profile_picture{
 
 	@FindBy(xpath= "//b[contains(text(),'PIM')]")
 	@CacheLookup
-	public WebElement PIM;
+	WebElement PIM;
 
 	@FindBy(xpath= "//a[contains(text(),'Linda Jane')]")
 	@CacheLookup
-	public WebElement employee_name;
+	WebElement employee_name;
 
 
 	@FindBy(xpath= "//img[@id='empPic']")
 	@CacheLookup
-	public  WebElement employee_photo;
+	WebElement employee_photo;
 
 
 	@FindBy(xpath= "//input[@id='photofile']")
 	@CacheLookup
-	public static WebElement choose_file;
+	WebElement choose_file;
 
 	@FindBy(xpath= "//input[@id='btnSave']")
 	@CacheLookup
-	public WebElement upload_button;
+	 WebElement upload_button;
 
 	@FindBy(xpath = "//div[contains(@class, 'message success fadable') and contains(., 'Successfully Uploaded')]")
 	@CacheLookup
-	public static WebElement confirmationText;
+	WebElement confirmationText;
 
 
+
+	public  WebElement getConfirmationText() {
+		return confirmationText;
+	}
 
 	public void clickPIM()
 	{

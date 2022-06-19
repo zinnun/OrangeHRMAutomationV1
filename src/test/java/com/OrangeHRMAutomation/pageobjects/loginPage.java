@@ -26,26 +26,46 @@ public class loginPage {
 
 	@FindBy(xpath = "//input[@id='btnLogin']")
 	@CacheLookup
-	public static WebElement loginButton;
+	WebElement loginButton;
 
 	@FindBy(xpath= "//a[contains(text(),'Logout')]")
 	@CacheLookup
-	public WebElement logOut;
+	WebElement logOut;
 
 
 	@FindBy(xpath= "//span[contains(text(),'Invalid credentials')]")
 	@CacheLookup
-	public static WebElement invalidMesage;
+	WebElement invalidMesage;
 
 	@FindBy(xpath="//body/div[@id='wrapper']/div[@id='branding']/a[1]/img[1]")
 	@CacheLookup
-	public static WebElement logo;
+	WebElement logo;
 
 
 	@FindBy(xpath="//a[@id='menu_dashboard_index']")
 	@CacheLookup
-	public static WebElement dashBoard;
+	WebElement dashBoard;
 
+
+	public WebElement getLoginButton() {
+		return loginButton;
+	}
+
+	public WebElement getLogOut() {
+		return logOut;
+	}
+
+	public WebElement getInvalidMesage() {
+		return invalidMesage;
+	}
+
+	public WebElement getLogo() {
+		return logo;
+	}
+
+	public WebElement getDashBoard() {
+		return dashBoard;
+	}
 
 	public void setUsername(String name)
 	{

@@ -38,7 +38,7 @@ public class TC_004_EditEmployeedetails extends BaseClass{
 		emp.click_search_result();
 		log.info("search result clicked");
 		
-		wait.until(ExpectedConditions.visibilityOf(emp.personalInfo));
+		wait.until(ExpectedConditions.visibilityOf(emp.getPersonalInfo()));
 		emp.clickEdit();
 		
 		// putting some hard coded value
@@ -48,20 +48,20 @@ public class TC_004_EditEmployeedetails extends BaseClass{
 		emp.enterLicense("5063940");
 		emp.clickLicenseExpiry();
 
-		DropDownSelect.dropdownByVisibleText(emp.licenseExpiryMonth, "Jun");
-		DropDownSelect.dropdownByVisibleText(emp.licenseExpiryYear, "1984");
-		emp.licenseExpiryDay.click();
+		DropDownSelect.dropdownByVisibleText(emp.getLicenseExpiryMonth(), "Jun");
+		DropDownSelect.dropdownByVisibleText(emp.getLicenseExpiryYear(), "1984");
+		emp.getLicenseExpiryDay().click();
 
 		emp.clickMaleRadio();
-		DropDownSelect.dropdownByIndex(emp.maritalStatus, 1);
+		DropDownSelect.dropdownByIndex(emp.getMaritalStatus(), 1);
 
-		DropDownSelect.dropdownByVisibleText(emp.nationality, "American");
+		DropDownSelect.dropdownByVisibleText(emp.getNationality(), "American");
 
-		emp.saveButton.click();
+		emp.getSaveButton().click();
 
 
-		wait.until(ExpectedConditions.visibilityOf(editEmployeeDetails.confirmationText));
-		String fadable_message=editEmployeeDetails.confirmationText.getText();
+		wait.until(ExpectedConditions.visibilityOf(editEmployeeDetails.getConfirmationText()));
+		String fadable_message=editEmployeeDetails.getConfirmationText().getText();
 
 
 		if(fadable_message.contains("Successfully Saved"))

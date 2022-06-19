@@ -31,9 +31,9 @@ public class TC_003_addEmployee extends BaseClass{
 		//declaring actions class to move over the webelement
 		Actions action = new Actions(driver);
 
-		wait.until(ExpectedConditions.visibilityOf(empl.PIM));
-		action.moveToElement(empl.PIM).build().perform();
-		action.moveToElement(empl.addEmployee).click().build().perform();
+		wait.until(ExpectedConditions.visibilityOf(empl.getPIM()));
+		action.moveToElement(empl.getPIM()).build().perform();
+		action.moveToElement(empl.getAddEmployee()).click().build().perform();
 		log.info("add employee page opened");
 
 		//emp1.mouseOverAddEmployee();

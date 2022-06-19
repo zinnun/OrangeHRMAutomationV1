@@ -33,7 +33,9 @@ public class TC_002_LogoDisplayed extends BaseClass{
 		TC_001_LoginTest tc1 = new TC_001_LoginTest();
 		tc1.login(userName, passKey);
 
-		wait.until(ExpectedConditions.visibilityOf(loginPage.logo));
+		
+		loginPage lp = new loginPage(driver);
+		wait.until(ExpectedConditions.visibilityOf(lp.getLogo()));
 		log.info("logged in");
 
 		// getting the path of the image LOGO in directory
@@ -57,7 +59,7 @@ public class TC_002_LogoDisplayed extends BaseClass{
 		}
 
 		// taking screenshot the of the after login using aShot API
-		WebElement theLogo=loginPage.logo;
+		WebElement theLogo=lp.getLogo();
 		Screenshot logoSS = new AShot().takeScreenshot(driver, theLogo);
 		log.info("screenshot taken");
 

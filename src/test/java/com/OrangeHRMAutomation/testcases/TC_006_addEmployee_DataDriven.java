@@ -3,10 +3,7 @@ package com.OrangeHRMAutomation.testcases;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -36,9 +33,9 @@ public class TC_006_addEmployee_DataDriven extends BaseClass{
 		//declaring actions class to move over the webelement
 		Actions action = new Actions(driver);
 
-		wait.until(ExpectedConditions.visibilityOf(emp1.PIM));
-		action.moveToElement(emp1.PIM).build().perform();
-		action.moveToElement(emp1.addEmployee).click().build().perform();
+		wait.until(ExpectedConditions.visibilityOf(emp1.getPIM()));
+		action.moveToElement(emp1.getPIM()).build().perform();
+		action.moveToElement(emp1.getAddEmployee()).click().build().perform();
 		log.info("add employee page opened");
 
 		//emp1.mouseOverAddEmployee();
@@ -59,15 +56,15 @@ public class TC_006_addEmployee_DataDriven extends BaseClass{
 			log.info("adding " + first_name+ " "+last_name+" successful");
 			log.info("Test Passed");
 
-			wait.until(ExpectedConditions.visibilityOf(emp1.account));
+			wait.until(ExpectedConditions.visibilityOf(emp1.getAccount()));
 			Thread.sleep(1500);
-			emp1.account.click();
+			emp1.getAccount().click();
 			Thread.sleep(2000);
 		//	driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS) ;
 		//	action.moveToElement(addEmployeePage.logout).click().build().perform();
-			emp1.logout.click();
+			emp1.getLogout().click();
 			
-			wait.until(ExpectedConditions.visibilityOf(emp1.txtUsername));
+			wait.until(ExpectedConditions.visibilityOf(emp1.getTxtUsername()));
 
 		}
 		else

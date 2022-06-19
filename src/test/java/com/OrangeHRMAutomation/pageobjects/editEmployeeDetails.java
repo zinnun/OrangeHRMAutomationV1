@@ -8,56 +8,49 @@ import org.openqa.selenium.support.PageFactory;
 
 public class editEmployeeDetails {
 
-
 	public WebDriver driver;
 
-	public editEmployeeDetails(WebDriver driver)
-	{
+	public editEmployeeDetails(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath= "//b[contains(text(),'PIM')]")
+	@FindBy(xpath = "//b[contains(text(),'PIM')]")
 	@CacheLookup
-	public WebElement PIM;
+	WebElement PIM;
 
-	@FindBy(xpath= "//a[@id='menu_pim_viewEmployeeList']")
+	@FindBy(xpath = "//a[@id='menu_pim_viewEmployeeList']")
 	@CacheLookup
-	public  WebElement employeeList;
+	WebElement employeeList;
 
-	@FindBy(xpath= "//input[@id='empsearch_employee_name_empName']")
+	@FindBy(xpath = "//input[@id='empsearch_employee_name_empName']")
 	@CacheLookup
 	WebElement searchName;
 
+	@FindBy(xpath = "//li[@class='ac_even ac_over']")
+	WebElement search_name_suggestion;
 
-	@FindBy(xpath= "//li[@class='ac_even ac_over']")
-	@CacheLookup
-	public WebElement search_name_suggestion;
-
-
-	@FindBy(xpath= "//input[@id='searchBtn']")
+	@FindBy(xpath = "//input[@id='searchBtn']")
 	@CacheLookup
 	WebElement searchButton;
 
-	@FindBy(xpath= "//div[@id='tableWrapper']/table/tbody/tr/td[3]/a")
-	@CacheLookup
-	
-	public WebElement search_result;
+	@FindBy(xpath = "//div[@id='tableWrapper']/table/tbody/tr/td[3]/a")
+	WebElement search_result;
 
-	@FindBy(xpath= "//input[@id='btnSave'][@value='Edit']")
+	@FindBy(xpath = "//input[@id='btnSave'][@value='Edit']")
 	@CacheLookup
 	WebElement editButton;
 
-	@FindBy(xpath= "//input[@id='personal_txtEmpFirstName']")
+	@FindBy(xpath = "//input[@id='personal_txtEmpFirstName']")
 	@CacheLookup
-	public WebElement firstName;
+	WebElement firstName;
 
-	@FindBy(xpath="//input[@id='personal_txtEmpMiddleName']")
+	@FindBy(xpath = "//input[@id='personal_txtEmpMiddleName']")
 	@CacheLookup
-	public  WebElement middleName;
+	WebElement middleName;
 
-	@FindBy(xpath="//input[@id='personal_txtEmpLastName']")
+	@FindBy(xpath = "//input[@id='personal_txtEmpLastName']")
 	@CacheLookup
-	public  WebElement lastName;
+	WebElement lastName;
 
 	@FindBy(xpath = "//input[@id='personal_txtLicenNo']")
 	@CacheLookup
@@ -69,15 +62,15 @@ public class editEmployeeDetails {
 
 	@FindBy(xpath = "//body/div[@id='ui-datepicker-div']/div[1]/div[1]/select[2]")
 	@CacheLookup
-	public  WebElement licenseExpiryYear;
+	WebElement licenseExpiryYear;
 
 	@FindBy(xpath = "//body/div[@id='ui-datepicker-div']/div[1]/div[1]/select[1]")
 	@CacheLookup
-	public  WebElement licenseExpiryMonth;
+	WebElement licenseExpiryMonth;
 
 	@FindBy(xpath = "//tr//a[contains(text(),'12')]")
 	@CacheLookup
-	public  WebElement licenseExpiryDay;
+	WebElement licenseExpiryDay;
 
 	@FindBy(xpath = "//label[contains(text(),'Male')]")
 	@CacheLookup
@@ -89,155 +82,190 @@ public class editEmployeeDetails {
 
 	@FindBy(xpath = "//select[@id='personal_cmbMarital']")
 	@CacheLookup
-	public WebElement maritalStatus;
+	WebElement maritalStatus;
 
 	@FindBy(xpath = "//select[@id='personal_cmbNation']")
 	@CacheLookup
-	public WebElement nationality;
+	WebElement nationality;
 
 	@FindBy(xpath = "//body/div[@id='wrapper']/div[@id='content']"
 			+ "/div[@id='employee-details']/div[@id='pdMainContainer']"
 			+ "/div[2]/form[1]/fieldset[1]/ol[3]/li[4]/img[1]")
 	@CacheLookup
-	public WebElement DOB;
+	WebElement DOB;
 
 	@FindBy(xpath = "//body/div[@id='wrapper']/div[@id='content']"
 			+ "/div[@id='employee-details']/div[@id='pdMainContainer']"
 			+ "/div[2]/form[1]/fieldset[1]/ol[3]/li[4]/img[1]")
 	@CacheLookup
-	public WebElement DOB_Year;
+	WebElement DOB_Year;
 
 	@FindBy(xpath = "//body/div[@id='wrapper']/div[@id='content']"
 			+ "/div[@id='employee-details']/div[@id='pdMainContainer']"
 			+ "/div[2]/form[1]/fieldset[1]/ol[3]/li[4]/img[1]")
 	@CacheLookup
-	public WebElement DOB_Month;
+	WebElement DOB_Month;
 
 	@FindBy(xpath = "//img[@id='empPic']")
 	@CacheLookup
-	public WebElement ProfilePicture;
+	WebElement ProfilePicture;
 
 	@FindBy(xpath = "//input[@id='btnSave']")
 	@CacheLookup
-	public WebElement saveButton;
+	WebElement saveButton;
 
 	@FindBy(xpath = "//div[contains(@class, 'message success fadable') and contains(., 'Successfully Saved')]")
 	@CacheLookup
-	public static WebElement confirmationText;
+	WebElement confirmationText;
 
 	@FindBy(xpath = "//h1[contains(text(),'Personal Details')]")
 	@CacheLookup
-	public WebElement personalInfo;
+	WebElement personalInfo;
 
 
 
-	public void clickPIM()
-	{
+
+	public WebElement getPIM() {
+		return PIM;
+	}
+
+	public WebElement getEmployeeList() {
+		return employeeList;
+	}
+
+	public WebElement getSearch_name_suggestion() {
+		return search_name_suggestion;
+	}
+
+	public WebElement getSearch_result() {
+		return search_result;
+	}
+
+	public WebElement getFirstName() {
+		return firstName;
+	}
+
+	public WebElement getMiddleName() {
+		return middleName;
+	}
+
+	public WebElement getLastName() {
+		return lastName;
+	}
+
+	public WebElement getLicenseExpiryYear() {
+		return licenseExpiryYear;
+	}
+
+	public WebElement getLicenseExpiryMonth() {
+		return licenseExpiryMonth;
+	}
+
+	public WebElement getLicenseExpiryDay() {
+		return licenseExpiryDay;
+	}
+
+	public WebElement getMaritalStatus() {
+		return maritalStatus;
+	}
+
+	public WebElement getNationality() {
+		return nationality;
+	}
+
+	public WebElement getDOB() {
+		return DOB;
+	}
+
+	public WebElement getDOB_Year() {
+		return DOB_Year;
+	}
+
+	public WebElement getDOB_Month() {
+		return DOB_Month;
+	}
+
+	public WebElement getProfilePicture() {
+		return ProfilePicture;
+	}
+
+	public WebElement getSaveButton() {
+		return saveButton;
+	}
+
+	public WebElement getConfirmationText() {
+		return confirmationText;
+	}
+
+	public WebElement getPersonalInfo() {
+		return personalInfo;
+	}
+
+	public void clickPIM() {
 		PIM.click();
 	}
 
-	public void clickEmployeeList()
-	{
+	public void clickEmployeeList() {
 		employeeList.click();
 	}
 
-	public void enterEmployeeName(String name)
-	{
+	public void enterEmployeeName(String name) {
 		searchName.click();
 		searchName.clear();
 		searchName.sendKeys(name);
 	}
 
-
-	public void seach_suggestion_click()
-	{
+	public void seach_suggestion_click() {
 		search_name_suggestion.click();
 	}
 
-//	public void enterEmployeeName(String name)
-//	{
-//		searchName.sendKeys(name);
-//	}
+	// public void enterEmployeeName(String name)
+	// {
+	// searchName.sendKeys(name);
+	// }
 
-	public void clickSearch()
-	{
+	public void clickSearch() {
 		searchButton.click();
 	}
 
-	public void click_search_result()
-	{
+	public void click_search_result() {
 		search_result.click();
 	}
 
-	public void clickEdit()
-	{
+	public void clickEdit() {
 		editButton.click();
 	}
 
-
-	public void enterFirstName(String name)
-	{
+	public void enterFirstName(String name) {
 		firstName.clear();
 		firstName.sendKeys(name);
 	}
 
-	public void enterMiddleName(String name)
-	{
+	public void enterMiddleName(String name) {
 		middleName.clear();
 		middleName.sendKeys(name);
 	}
 
-	public void enterLastName(String name)
-	{
+	public void enterLastName(String name) {
 		lastName.clear();
 		lastName.sendKeys(name);
 	}
 
-	public void enterLicense(String license)
-	{
+	public void enterLicense(String license) {
 		drivingLicense.clear();
 		drivingLicense.sendKeys(license);
 	}
 
-	public void clickLicenseExpiry()
-	{
+	public void clickLicenseExpiry() {
 		licenseExpiry.click();
 	}
 
-	public void clickMaleRadio()
-	{
+	public void clickMaleRadio() {
 		maleRadio.click();
 	}
 
-	public void clickDOB()
-	{
+	public void clickDOB() {
 		DOB.click();
 	}
 
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
