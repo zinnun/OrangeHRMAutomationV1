@@ -60,8 +60,8 @@ public class TC_004_EditEmployeedetails extends BaseClass{
 		emp.getSaveButton().click();
 
 
-		wait.until(ExpectedConditions.visibilityOf(editEmployeeDetails.getConfirmationText()));
-		String fadable_message=editEmployeeDetails.getConfirmationText().getText();
+		wait.until(ExpectedConditions.visibilityOf(emp.getConfirmationText()));
+		String fadable_message=emp.getConfirmationText().getText();
 
 
 		if(fadable_message.contains("Successfully Saved"))
